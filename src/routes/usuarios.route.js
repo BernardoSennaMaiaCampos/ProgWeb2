@@ -12,7 +12,7 @@ router.get("/:id", controller.getById);
 router.post("/", auth, authorize(["user", "admin"]), controller.create);
 router.put("/:id", auth, authorize(["user", "admin"]), controller.update);
 router.delete("/:id", auth, authorize(["admin"]), controller.remove);
-module.exports = router;
+
 
 // GET
 /**
@@ -25,7 +25,7 @@ module.exports = router;
 * 200:
 * description: Lista de usuários retornada com sucesso
 */
-router.get('/', usersController.getAll);
+router.get('/', usuariosController.getAll);
 
 
 // GET POR ID
@@ -48,7 +48,7 @@ router.get('/', usersController.getAll);
 * 404:
 * description: Usuário não encontrado
 */
-router.get('/:id', usersController.getById);
+router.get('/:id', usuariosController.getById);
 
 
 // POST - CADASTRAR USUÁRIO
@@ -80,7 +80,7 @@ router.get('/:id', usersController.getById);
 * 400:
 * description: Dados inválidos
 */
-router.post('/', usersController.create);
+router.post('/', usuariosController.create);
 
 
 //PUT - ATUALIZAR USUÁRIO
@@ -114,7 +114,7 @@ router.post('/', usersController.create);
 * 404:
 * description: Usuário não encontrado
 */
-router.put('/:id', usersController.update);
+router.put('/:id', usuariosController.update);
 
 
 // DELETE - EXCLUIR USUÁRIO
@@ -137,6 +137,6 @@ router.put('/:id', usersController.update);
 * 404:
 * description: Usuário não encontrado
 */
-router.delete('/:id', usersController.delete);
+router.delete('/:id', usuariosController.delete);
 
 module.exports = router;
